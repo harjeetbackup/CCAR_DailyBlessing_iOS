@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Maariv Aravim - Responsive</title>
+
+  <style>
+  
+/****** This piece is crucial for responsive design *****/
+/**/
+/**/	@media screen and (min-width:30em) {
+/**/	  #mainbody-group > div {
+/**/		float:right;
+/**/		width:50%;
+/**/	  }  
+/**/	}
+/**/
+/******* not that I really understand how it works ********/
+ 
+ body {
+ font:125%/1.4 "Garamond","Times New Roman","MFDavidRegular",serif;  /* I don't know how this works, but it makes the Hebrew & translit lines match up */
+}
+
+@font-face {
+    font-family: 'MFDavidRegular';
+    src: url('mf_david-regular.eot');
+    src: url('mf_david-regular.eot') format('embedded-opentype'),
+         url('mf_david-regular.woff') format('woff'),
+         url('mf_david-regular.ttf') format('truetype'),
+         url('mf_david-regular.svg#MFDavidRegular') format('svg');
+}
+
+#header_container { 
+background:white; 
+height:25px; 
+position:fixed; /* This makes the header stay on top */
+width:100%;
+left:0;
+right:0;
+top:0; 
+border-bottom:1px solid #ccdde6;  }
+
+#header_sub { 
+padding:5px; 
+width:96%; 
+}
+ 
+.header {
+width:50%;
+color:#0681a7; 
+font-family:"Garamond","Times New Roman","MFDavidRegular",serif;
+font-style:italic; font-size:.85em;
+ }
+ 
+#leftheader {
+float:left;
+text-align:left;
+}
+
+#rightheader {
+float:right;
+text-align:right;
+}
+
+#mainbody {
+margin-top:40px; /* Remove this if not using sticky header */
+}
+
+#mainbody-group {
+
+}
+
+#translit {
+text-align:left;
+vertical-align:top; 
+font-family:Garamond,"Times New Roman","MFDavidRegular",serif;
+font-size:1.15em;
+}
+
+#hebrew {
+text-align:right;
+vertical-align:top; 
+direction:rtl;
+font-family:Raanana;"Times New Roman","MFDavidRegular",serif;
+font-size:1.15em;
+}
+
+#translation {
+width:96%;
+padding:2%;
+font-family:Garamond,"Times New Roman","MFDavidRegular",serif;
+margin-left:4%;
+}
+
+#chatimah {
+direction:rtl;
+text-align:left;
+font-family:Raanana;"Times New Roman","MFDavidRegular",serif;
+}
+
+#chatimah-container {
+margin-left:15%
+}
+
+#footer {
+font-family:Garamond;
+text-align:right;
+margin-right:2%;
+bottom:0;
+right:0;
+width:100%;
+position:fixed;  /* this keeps footer on top - delete line for "normal" page number footer behavior */
+}
+
+</style>
+
+ 
+
+</head>
+
+<body>
+
+<div id="header_container">
+    <div id="header_sub">
+
+  	<div id="leftheader" class="header" >	
+	Maariv Aravim
+	</div>
+        
+	<div id="rightheader" class="header">
+	Sh'ma & its Blessings
+	</div>
+ 
+    </div>
+</div>
+
+
+</div>
+
+
+<div id="mainbody">
+    <div id="mainbody-group">
+		<div id="hebrew">
+		<span style="line-height:.9em;"><span style="color:#0681a7; font-size:1.75em;">בָּ</span><span style="color:#0681a7; font-size:1.3em;">רוּךְ</span> אַתָּה, יְיָ<br></span>
+		אֶלֹהֵינוּ, מֶלֶךְ הָעוֹלָם,<br>
+		אֲשֶׁר בִּדְבָרוֹ מַעֲרִיב עֲרָבִים,<br>
+		בְּחָכְמָה פּוֹתֵחַ שְׁעָרִים,<br>
+		וּבִתְבוּנָה מְשַׁנֶּה עִתִּים<br>
+		וּמַחֲלִיף אֶת הַזְּמַנִּים,<br>
+		וּמְסַדֵּר אֶת הַכּוֹכָבִים<br>
+		בְּמִשְׁמְרוֹתֵיהֶם בָּרָקִיעַ כְּרְצוֹנוֹ.<br>
+		בּוֹרֵא יוֹם וָלָיְלָה,<br>
+		גּוֹלֵל אוֹר מִפְּנֵי חשֶׁךְ<br>
+		וְחשֶׁךְ מִפְּנֵי אוֹר.<br>
+		וּמַעֲבִיר יוֹם וּמֵבִיא לָיְלָה,<br>
+		וּמַבְדִּיל בֵּין יוֹם וּבֵין לָיְלָה,<br>
+		יְיָ צְבָאוֹת שְׁמוֹ.<br>
+		אֵל חַי וְקַיָּם,<br>
+		תָּמִיד יִמְלוֹךְ עָלֵינוּ לְעוֹלָם וָעֶד.<br>
+		בָּרוּךְ אַתָּה, יְיָ, הַמַּעֲרִיב עֲרָבִים.<br>
+		</div>
+
+		<div id="translit" >	
+		<span style="line-height:.9em;"><span style="color:#0681a7; font-size:1.75em;">B</span><span style="color:#0681a7;font-size:1.15em;">ARUCH </span>atah Adonai</span><br>
+		Eloheinu, Melech haolam,<br>
+		asher bidvaro maariv aravim,<br>
+		b'chochmah potei-ach sh'arim,<br>
+		uvitvunah m'shanehitim<br>
+		umachalif et haz'manim,<br>
+		um'sadeir et hakochavim<br>
+		b'mishm'roteihem barakia kirtzono.<br>
+		Borei yom valailah,<br>
+		goleil or mipnei choshech,<br>
+		v'choshech mipnei or.<br>
+		Umaavir yom umeivi lailah,<br>
+		umavdil bein yom uvein lailah,<br>
+		Adonai Tz'vaot sh'mo.<br>
+		El chai v'kayam,<br>
+		tamid yimloch aleinu l'olam va-ed.<br>
+		Baruch atah, Adonai, hamaariv aravim.<br>
+		</div>
+	</div>
+</div>
+<div style="min-height:30px; color:white;">.</div> <!-- Quick workaround for getting some space between translit, Hebrew and translation -->
+	<div id="translation-container">	
+			<div id="translation">
+
+			<span style="line-height:.9em;"><span style="color:#0681a7; font-size:1.75em;">B</span><span style="color:#0681a7;">LESSED</span> 
+			are You, Adonai our God, Ruler of the universe, </span><br>
+			who speaks the evening into being,<br>
+			skillfully opens the gates,<br>
+			thoughtfully alters the time and changes the seasons,<br>
+			and arranges the stars in their heavenly courses according to plan.<br>
+			You are Creator of day and night,<br>
+			rolling light away from darkness and darkness from light,<br>
+			transforming day into night and distinguishing one from the other.<br>
+			<span style="font-style:italic;">Adonai Tz'vaot</span> is Your Name.<br>
+
+			Ever-living God, may You reign continually over us into eternity.<br>
+			Blessed are You, Adonai, who brings on evening.<br>
+			<div id="chatimah-container">
+  				    <div id="chatimah">
+					בָּרוּךְ אַתָּה, יְיָ, הַמַּעֲרִיב עֲרָבִים.
+					</div>
+			<div style="font-size:.8em;">Baruch atah, Adonai, hamaariv aravim.</div>
+      </div>
+</div>
+		<footer role="contentinfo">   
+			<div id="footer">
+        <span style="background:white;">&nbsp;30 <span style="color:#0681a7;">[148]</span></span>
+			</div>
+		</footer>
+	</div>
+
+
+
+</body>
+
+</html>
