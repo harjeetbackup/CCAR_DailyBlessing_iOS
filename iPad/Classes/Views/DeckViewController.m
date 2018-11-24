@@ -83,7 +83,7 @@
 
 	[_detail setParentViewCtrl:self];
 	_detail._selectedCardIndex=index;
-	_detail.view.frame = CGRectMake(384, 44, kDetailViewWidth, 724);
+	_detail.view.frame = CGRectMake(382, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height - 44);
 	[_detail loadArrayOfCards:array withParentViewC:self];
     
    /* _detail.view.tag = 1;
@@ -102,11 +102,11 @@
 	[_indexView setParentViewCtrl:self];
      if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
      {
-	   _indexView.view.frame = CGRectMake(382, 44, kDetailViewWidth+40, 724);
+	   _indexView.view.frame = CGRectMake(382, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height - 44);
      }
     else
     {
-         _indexView.view.frame = CGRectMake(382, 44, kDetailViewWidth, 724);
+         _indexView.view.frame = CGRectMake(382, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height - 44);
     }
    // _indexView.view.frame = CGRectMake(382, 44, 980, 700);
     _indexView.view.tag = 2;
@@ -125,7 +125,7 @@
 	[_detail setParentViewCtrl:self];
 	_detail._selectedCardIndex=index;
 	_detail._searchText=text;
-	_detail.view.frame = CGRectMake(384, 44, kDetailViewWidth, 724);
+	_detail.view.frame = CGRectMake(384, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height - 44);
 	_detail.basicCall = NO;
 	[_detail loadArrayOfCards:array withParentViewC:self];
     _detail.view.tag = 3;
@@ -331,14 +331,14 @@
         if(indexPath.section == 3 && indexPath.row == 0)
             return 33;
         
-        return 50;
+        return (tableView.frame.size.height - 20)/ 13.0;
     }
     else
     {
         if(indexPath.section == 2 && indexPath.row == 0)
             return 33;
         
-        return 50;
+         return (tableView.frame.size.height - 20)/ 13.0;
     }
 }
 
@@ -469,7 +469,7 @@
                 deckArray = nil;
                 ModalViewCtrl* model = [[ModalViewCtrl alloc] initWithNibName:@"ModalViewiPad" bundle:nil contentType:kcontentTypeIntro];
                 [model setParentCtrl:self];
-                model.view.frame = CGRectMake(382, 44, kDetailViewWidth+2, 724);
+                model.view.frame = CGRectMake(382, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height);
                 model.view.tag = 6;
                 if([self.view viewWithTag:6]!=nil)
                 {
@@ -578,7 +578,7 @@
 {
 	ModalViewCtrl* model = [[ModalViewCtrl alloc] initWithNibName:@"ModalViewiPad" bundle:nil contentType:kContentTypeSetting];
 	[model setParentCtrl:self];
-	model.view.frame = CGRectMake(382, 44, kDetailViewWidth, 724);
+	model.view.frame = CGRectMake(382, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height);
     model.view.tag = 4;
     if([self.view viewWithTag:4]!=nil)
     {
@@ -591,7 +591,7 @@
 {
 	ModalViewCtrl* model = [[ModalViewCtrl alloc] initWithNibName:@"ModalViewiPad" bundle:nil contentType:kContentTypeHelp];
 	[model setParentCtrl:self];
-	model.view.frame = CGRectMake(382, 44, kDetailViewWidth+2, 724);
+	model.view.frame = CGRectMake(382, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height);
     model.view.tag = 5;
     if([self.view viewWithTag:5]!=nil)
     {
@@ -605,7 +605,7 @@
 {
 	ModalViewCtrl* model = [[ModalViewCtrl alloc] initWithNibName:@"ModalViewiPad" bundle:nil contentType:kContentTypeInfo];
 	[model setParentCtrl:self];
-	model.view.frame = CGRectMake(382, 44, kDetailViewWidth+2, 724);
+	model.view.frame = CGRectMake(382, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height);
     model.view.tag = 6;
     if([self.view viewWithTag:6]!=nil)
     {
@@ -619,7 +619,7 @@
 {
 	SearchViewController* searchView = [[SearchViewController alloc] initWithNibName:@"SearchViewiPad" bundle:nil];
 	[searchView setParentViewCtrl:self];
-	searchView.view.frame = CGRectMake(382, 44, kDetailViewWidth, 724);
+	searchView.view.frame = CGRectMake(382, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height);
     searchView.view.tag = 7;
     if([self.view viewWithTag:7]!=nil)
     {
@@ -633,7 +633,7 @@
 {
 	IndexViewController* indexView = [[IndexViewController alloc] initWithNibName:@"IndexViewiPad" bundle:nil forDeck:nil];
 	[indexView setParentViewCtrl:self];
-	indexView.view.frame = CGRectMake(382, 44, kDetailViewWidth, 724);
+	indexView.view.frame = CGRectMake(382, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height);
     indexView.view.tag = 8;
     if([self.view viewWithTag:8]!=nil)
     {
@@ -648,7 +648,7 @@
 - (void) myComments{
 	
 	MyCommentsViewController* commentsView = [[MyCommentsViewController alloc] initWithNibName:@"MyCommentsViewiPad" bundle:nil];
-	commentsView.view.frame = CGRectMake(382, 44, kDetailViewWidth, 724);
+	commentsView.view.frame = CGRectMake(382, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height);
     commentsView.view.tag = 9;
     if([self.view viewWithTag:9]!=nil)
     {
@@ -661,7 +661,7 @@
 - (void) myVoiceNotes{
 	
 	MyVoiceNotesViewController* notesView = [[MyVoiceNotesViewController alloc] initWithNibName:@"MyVoiceNotesViewiPad" bundle:nil];
-	notesView.view.frame = CGRectMake(382, 44, kDetailViewWidth, 724);
+	notesView.view.frame = CGRectMake(382, 44, UIScreen.mainScreen.bounds.size.width - 382, UIScreen.mainScreen.bounds.size.height);
     notesView.view.tag = 10;
     if([self.view viewWithTag:10]!=nil)
     {

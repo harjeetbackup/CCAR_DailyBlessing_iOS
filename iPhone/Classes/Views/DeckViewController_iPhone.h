@@ -34,6 +34,8 @@
 @property (retain, nonatomic) IBOutlet UITableView *blessingTable;
 @property (retain, nonatomic) IBOutlet UIImageView *dailyBlessingImg;
 @property (retain, nonatomic) IBOutlet UILabel *myLabelSeven;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *dailyBlessingsToolBarHeight;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *topSpaceForTitleView;
 
 - (IBAction)displaySettings;
 - (IBAction)displayHelp;

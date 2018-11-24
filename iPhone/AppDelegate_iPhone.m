@@ -10,9 +10,6 @@
 
 #import "AppDelegate_iPhone.h"
 
-
-
-
 @implementation AppDelegate_iPhone
 
 @synthesize dbAccess = _dbAccess;

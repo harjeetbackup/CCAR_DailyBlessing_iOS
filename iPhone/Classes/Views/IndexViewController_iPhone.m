@@ -58,7 +58,6 @@
         } 
 	}
 	
-	
 }
 
 
@@ -127,7 +126,7 @@ NSArray *flashCards;
 	
     //---get all states beginning with the letter---
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", alphabet];
-    NSArray *flashCards = [cards filteredArrayUsingPredicate:predicate];
+    flashCards = [cards filteredArrayUsingPredicate:predicate];
     NSLog(@"For alphabet %@, no. of cards : %d",alphabet,[flashCards count]);
 	if ([flashCards count]>0) {
 		//---extract the relevant state from the states object---
@@ -154,8 +153,7 @@ NSArray *flashCards;
 	{
 		NSString * strCardName = [flashCards objectAtIndex:indexPath.row];
 		if ([strCardName length] > 0)
-			labelSize = [strCardName sizeWithFont: [UIFont systemFontOfSize: 16.0] constrainedToSize: CGSizeMake(labelSize.width, 1000) lineBreakMode: UILineBreakModeWordWrap];
-		
+			labelSize = [strCardName sizeWithFont: [UIFont systemFontOfSize: 16.0] constrainedToSize: CGSizeMake(labelSize.width, 1000) lineBreakMode: UILineBreakModeWordWrap];		
 	}
 	return 24.0 + labelSize.height;
 }

@@ -359,7 +359,7 @@
 	_totalCard = [_arrayOfCards count];
 	
 	int count = (_arrayOfCards.count > 3) ? 3 : _arrayOfCards.count;
-	[_scrlView setContentSize:CGSizeMake(kDetailViewWidth * [_arrayOfCards count], _scrlView.frame.size.height)];
+	[_scrlView setContentSize:CGSizeMake(self.view.frame.size.width * [_arrayOfCards count], _scrlView.frame.size.height)];
 	///	_scrlView.scrollEnabled = NO;
 	
 	NSInteger index=0;
@@ -379,7 +379,7 @@
 	for (int i = 0; i < count; i++)
 	{
 		index = tempIndex	+ i;
-        CustomWebView* page = [[CustomWebView alloc] initWithFrame:CGRectMake(kDetailViewWidth * i, 0, kDetailViewWidth, _scrlView.frame.size.height)];
+        CustomWebView* page = [[CustomWebView alloc] initWithFrame:self.view.bounds];
         card = [[_arrayOfCards objectAtIndex:index] getCardOfType: kCardTypeFront];
         //page.frame = CGRectMake(kDetailViewWidth * i, 0, kDetailViewWidth, _scrlView.frame.size.height);
         
@@ -419,7 +419,7 @@
 	
 	if (_totalCard >= 2 && _selectedCardIndex >= 1) {
 		[self updateFlashCard];
-		[_scrlView setContentOffset:CGPointMake(kDetailViewWidth * _selectedCardIndex, 0)];
+		[_scrlView setContentOffset:CGPointMake(self.view.frame.size.width * _selectedCardIndex, 0)];
 		[self updateFlashDetails];
 		
 	}else if (_totalCard==1) {
@@ -468,7 +468,7 @@
 {
 	NSInteger tempIndex=(index % 3);
 	CustomWebView* webView = (CustomWebView*)[_arrayOfpages objectAtIndex:tempIndex];
-	webView.frame = CGRectMake(kDetailViewWidth * index, 0, kDetailViewWidth, _scrlView.frame.size.height);
+	webView.frame = CGRectMake(self.view.frame.size.width * index, 0, self.view.frame.size.width, _scrlView.frame.size.height);
 	webView.tag = 1100 + index;
 	mWindow.viewToObserve = webView;
 	[webView loadClearBgHTMLString:[[_arrayOfCards objectAtIndex:index] getCardOfType: _cardType].cardTitle];
@@ -497,7 +497,7 @@
 		++_selectedCardIndex;
 		_cardType = kCardTypeFront;
 		
-		[_scrlView setContentOffset:CGPointMake(kDetailViewWidth * _selectedCardIndex, 0) animated:YES];
+		[_scrlView setContentOffset:CGPointMake(self.view.bounds.size.width * _selectedCardIndex, 0) animated:YES];
 		[_cardTimer invalidate];
 		[_cardTimer release];
 		_cardTimer = [[NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(updateFlashCard) userInfo:nil repeats:NO] retain];
@@ -514,7 +514,7 @@
 		--_selectedCardIndex;
 		_cardType = kCardTypeFront;
 		
-		[_scrlView setContentOffset:CGPointMake(kDetailViewWidth * _selectedCardIndex, 0) animated:YES];
+		[_scrlView setContentOffset:CGPointMake(self.view.bounds.size.width * _selectedCardIndex, 0) animated:YES];
 		[_cardTimer invalidate];
 		[_cardTimer release];
 		_cardTimer = [[NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(updateFlashCard) userInfo:nil repeats:NO] retain];
@@ -532,7 +532,7 @@
 	[UIView setAnimationTransition:(UIViewAnimationTransitionFlipFromLeft)
 						   forView:_scrlView cache:NO];
 	
-	int tagVal = 1100 + _scrlView.contentOffset.x / kDetailViewWidth;
+	int tagVal = 1100 + _scrlView.contentOffset.x / self.view.frame.size.width;
 	CustomWebView* webView = (CustomWebView*)[_scrlView viewWithTag:tagVal];
 	[webView loadClearBgHTMLString:[[_arrayOfCards objectAtIndex:_selectedCardIndex] getCardOfType: _cardType].cardTitle];
 	

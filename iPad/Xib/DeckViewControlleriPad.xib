@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment defaultVersion="1072" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeckViewController">
@@ -27,29 +31,30 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" id="88">
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <color key="barTintColor" red="0.82745105029999999" green="0.95294123890000004" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="barTintColor" red="0.7920912504196167" green="0.94173622131347656" blue="0.99957525730133057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <items>
                         <navigationItem id="89"/>
                     </items>
                 </navigationBar>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="895F326B-665B-4931-85B8-AEB3F73C2807" id="14">
-                    <rect key="frame" x="0.0" y="44" width="380" height="660"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="0.0" colorSpace="calibratedRGB"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" image="imageView:14:image" translatesAutoresizingMaskIntoConstraints="NO" id="14">
+                    <rect key="frame" x="0.0" y="224" width="380" height="480"/>
+                    <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="43" sectionHeaderHeight="10" sectionFooterHeight="5" id="10">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="43" sectionHeaderHeight="10" sectionFooterHeight="5" translatesAutoresizingMaskIntoConstraints="NO" id="10">
                     <rect key="frame" x="0.0" y="70" width="380" height="634"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="380" id="wyf-qe-Yw7"/>
+                    </constraints>
                     <label key="tableFooterView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Copyright © 2013 Central Conference of American Rabbis. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="84">
-                        <rect key="frame" x="0.0" y="637" width="380" height="21"/>
+                        <rect key="frame" x="0.0" y="881.5" width="380" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" red="0.72068319520000002" green="0.01128324149" blue="0.021028622050000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.72068319520000002" green="0.01128324149" blue="0.021028622050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <connections>
@@ -57,72 +62,89 @@
                         <outlet property="delegate" destination="-1" id="16"/>
                     </connections>
                 </tableView>
-                <imageView userInteractionEnabled="NO" contentMode="center" image="logo_iPad.png" id="43">
+                <imageView userInteractionEnabled="NO" contentMode="center" image="logo_iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="43">
                     <rect key="frame" x="0.0" y="0.0" width="380" height="70"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="380" id="Obw-wZ-wwq"/>
+                    </constraints>
                 </imageView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="17" customClass="CustomDeckToolBar">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17" customClass="CustomDeckToolBar">
                     <rect key="frame" x="0.0" y="704" width="380" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="380" id="mGl-w0-cFA"/>
+                    </constraints>
                     <items>
                         <barButtonItem image="zoom_btn.png" style="plain" id="57">
-                            <color key="tintColor" red="0.074509806930000005" green="0.47843140360000003" blue="0.64313727620000005" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="tintColor" red="0.081077083945274353" green="0.40017259120941162" blue="0.57588434219360352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="searchCards" destination="-1" id="k9s-lD-Iwn"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="27"/>
                         <barButtonItem image="index_btn.png" style="plain" id="58">
-                            <color key="tintColor" red="0.074509806930000005" green="0.47843140360000003" blue="0.64313727620000005" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="tintColor" red="0.081077083945274353" green="0.40017259120941162" blue="0.57588434219360352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cardIndex" destination="-1" id="64"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="28"/>
                         <barButtonItem image="settings_btn.png" style="plain" id="59">
-                            <color key="tintColor" red="0.074509806930000005" green="0.47843140360000003" blue="0.64313727620000005" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="tintColor" red="0.081077083945274353" green="0.40017259120941162" blue="0.57588434219360352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="displaySettings" destination="-1" id="67"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="60"/>
                         <barButtonItem image="help_btn.png" style="plain" id="61">
-                            <color key="tintColor" red="0.074509806930000005" green="0.47843140360000003" blue="0.64313727620000005" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="tintColor" red="0.081077083945274353" green="0.40017259120941162" blue="0.57588434219360352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="displayHelp" destination="-1" id="68"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="62"/>
                         <barButtonItem image="info_btn.png" style="plain" id="63">
-                            <color key="tintColor" red="0.074509806930000005" green="0.47843140360000003" blue="0.64313727620000005" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="tintColor" red="0.081077083945274353" green="0.40017259120941162" blue="0.57588434219360352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="displayInfo" destination="-1" id="82"/>
                             </connections>
                         </barButtonItem>
                     </items>
                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <color key="barTintColor" red="0.82745105029999999" green="0.95294123890000004" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="barTintColor" red="0.7920912504196167" green="0.94173622131347656" blue="0.99957525730133057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </toolbar>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Daily Blessings" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="53">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Daily Blessings" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="53">
                     <rect key="frame" x="388" y="7" width="645" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                    <color key="textColor" red="0.074509806930000005" green="0.47843140360000003" blue="0.64313727620000005" alpha="1" colorSpace="deviceRGB"/>
-                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.081077083945274353" green="0.40017259120941162" blue="0.57588434219360352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="10" firstAttribute="top" secondItem="43" secondAttribute="bottom" id="1l6-9g-dJx"/>
+                <constraint firstItem="10" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="BgY-7u-eXn"/>
+                <constraint firstItem="43" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="DTB-ku-Pzd"/>
+                <constraint firstItem="17" firstAttribute="top" secondItem="10" secondAttribute="bottom" id="EuR-0R-CL9"/>
+                <constraint firstItem="17" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="Xys-oX-t38"/>
+                <constraint firstItem="43" firstAttribute="top" secondItem="6" secondAttribute="top" id="fGZ-jQ-Dd0"/>
+                <constraint firstAttribute="bottom" secondItem="17" secondAttribute="bottom" id="k1j-hV-syW"/>
+                <constraint firstItem="10" firstAttribute="top" secondItem="43" secondAttribute="bottom" id="npt-FX-49f"/>
+                <constraint firstItem="17" firstAttribute="top" secondItem="14" secondAttribute="bottom" id="oL0-aY-KjX"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
-        <image name="895F326B-665B-4931-85B8-AEB3F73C2807" width="320" height="480">
+        <image name="help_btn.png" width="30" height="30"/>
+        <image name="imageView:14:image" width="320" height="480">
             <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
-GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
+YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
+GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
 DBIAwAAAgAKACtISCRMVWk5TLm9iamVjdHOhFIADgAnSEgkXGqIYGYAEgAWACBAA0h0JHh9fEBROU1RJ
-RkZSZXByZXNlbnRhdGlvboAGgAdPEgAHCMpNTQAqAAcICO3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t
+RkZSZXByZXNlbnRhdGlvboAGgAdPEgAHFTZNTQAqAAcICO3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t
 7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t
 7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t
 7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t
@@ -7802,22 +7824,73 @@ RkZSZXByZXNlbnRhdGlvboAGgAdPEgAHCMpNTQAqAAcICO3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t
 397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e
 397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e
 397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e397e
-397e397e397e397e397e397e397e397e397e397e397e3wAMAQAAAwAAAAEBQAAAAQEAAwAAAAEB4AAA
-AQIAAwAAAAMABwieAQMAAwAAAAEAAQAAAQYAAwAAAAEAAgAAAREABAAAAAQABwikARIAAwAAAAEAAQAA
-ARUAAwAAAAEAAwAAARYAAwAAAAEAiAAAARcABAAAAAQABwi0ARwAAwAAAAEAAQAAAVMAAwAAAAMABwjE
-AAAAAAAIAAgACAAAAAgAAf4IAAP8CAAF+ggAAf4AAAH+AAAB/gAAAQ4AAAEAAQAB0iIjJCVaJGNsYXNz
-bmFtZVgkY2xhc3Nlc18QEE5TQml0bWFwSW1hZ2VSZXCjJicoXxAQTlNCaXRtYXBJbWFnZVJlcFpOU0lt
-YWdlUmVwWE5TT2JqZWN00iIjKitXTlNBcnJheaIqKNIiIy0uXk5TTXV0YWJsZUFycmF5oy0qKNMwMQky
-MzRXTlNXaGl0ZVxOU0NvbG9yU3BhY2VEMCAwABADgAvSIiM2N1dOU0NvbG9yojYo0iIjOTpXTlNJbWFn
-ZaI5KF8QD05TS2V5ZWRBcmNoaXZlctE9PlRyb290gAEAAAAIAAAAEQAAABoAAAAjAAAALQAAADIAAAA3
-AAAARQAAAEsAAABUAAAAWwAAAGgAAABvAAAAdwAAAHkAAAB+AAAAgAAAAIIAAACHAAAAkgAAAJQAAACW
-AAAAmAAAAJ0AAACgAAAAogAAAKQAAACmAAAAqAAAAK0AAADEAAAAxgAAAMgABwmYAAcJnQAHCagABwmx
-AAcJxAAHCcgABwnbAAcJ5gAHCe8ABwn0AAcJ/AAHCf8ABwoEAAcKEwAHChcABwoeAAcKJgAHCjMABwo4
-AAcKOgAHCjwABwpBAAcKSQAHCkwABwpRAAcKWQAHClwABwpuAAcKcQAHCnYAAAAAAAAEAQAAAAAAAAA/
-AAAAAAAAAAAAAAAAAAcKeA
+397e397e397e397e397e397e397e397e397e397e397e3wAPAQAAAwAAAAEBQAAAAQEAAwAAAAEB4AAA
+AQIAAwAAAAMABwjCAQMAAwAAAAEAAQAAAQYAAwAAAAEAAgAAAQoAAwAAAAEAAQAAAREABAAAAAQABwjY
+ARIAAwAAAAEAAQAAARUAAwAAAAEAAwAAARYAAwAAAAEAiAAAARcABAAAAAQABwjIARwAAwAAAAEAAQAA
+ASgAAwAAAAEAAgAAAVMAAwAAAAMABwjoh3MABwAADEgABwjuAAAAAAAIAAgACAAB/gAAAf4AAAH+AAAB
+DgAAAAAIAAH+CAAD/AgABfoIAAEAAQABAAAMSExpbm8CEAAAbW50clJHQiBYWVogB84AAgAJAAYAMQAA
+YWNzcE1TRlQAAAAASUVDIHNSR0IAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1IUCAgAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARY3BydAAAAVAAAAAzZGVzYwAAAYQAAABs
+d3RwdAAAAfAAAAAUYmtwdAAAAgQAAAAUclhZWgAAAhgAAAAUZ1hZWgAAAiwAAAAUYlhZWgAAAkAAAAAU
+ZG1uZAAAAlQAAABwZG1kZAAAAsQAAACIdnVlZAAAA0wAAACGdmlldwAAA9QAAAAkbHVtaQAAA/gAAAAU
+bWVhcwAABAwAAAAkdGVjaAAABDAAAAAMclRSQwAABDwAAAgMZ1RSQwAABDwAAAgMYlRSQwAABDwAAAgM
+dGV4dAAAAABDb3B5cmlnaHQgKGMpIDE5OTggSGV3bGV0dC1QYWNrYXJkIENvbXBhbnkAAGRlc2MAAAAA
+AAAAEnNSR0IgSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAASc1JHQiBJRUM2MTk2Ni0yLjEAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAADzUQABAAAAARbM
+WFlaIAAAAAAAAAAAAAAAAAAAAABYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABja
+WFlaIAAAAAAAACSgAAAPhAAAts9kZXNjAAAAAAAAABZJRUMgaHR0cDovL3d3dy5pZWMuY2gAAAAAAAAA
+AAAAABZJRUMgaHR0cDovL3d3dy5pZWMuY2gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAZGVzYwAAAAAAAAAuSUVDIDYxOTY2LTIuMSBEZWZhdWx0IFJHQiBjb2xvdXIgc3Bh
+Y2UgLSBzUkdCAAAAAAAAAAAAAAAuSUVDIDYxOTY2LTIuMSBEZWZhdWx0IFJHQiBjb2xvdXIgc3BhY2Ug
+LSBzUkdCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGRlc2MAAAAAAAAALFJlZmVyZW5jZSBWaWV3aW5nIENv
+bmRpdGlvbiBpbiBJRUM2MTk2Ni0yLjEAAAAAAAAAAAAAACxSZWZlcmVuY2UgVmlld2luZyBDb25kaXRp
+b24gaW4gSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB2aWV3AAAAAAATpP4AFF8u
+ABDPFAAD7cwABBMLAANcngAAAAFYWVogAAAAAABMCVYAUAAAAFcf521lYXMAAAAAAAAAAQAAAAAAAAAA
+AAAAAAAAAAAAAAKPAAAAAnNpZyAAAAAAQ1JUIGN1cnYAAAAAAAAEAAAAAAUACgAPABQAGQAeACMAKAAt
+ADIANwA7AEAARQBKAE8AVABZAF4AYwBoAG0AcgB3AHwAgQCGAIsAkACVAJoAnwCkAKkArgCyALcAvADB
+AMYAywDQANUA2wDgAOUA6wDwAPYA+wEBAQcBDQETARkBHwElASsBMgE4AT4BRQFMAVIBWQFgAWcBbgF1
+AXwBgwGLAZIBmgGhAakBsQG5AcEByQHRAdkB4QHpAfIB+gIDAgwCFAIdAiYCLwI4AkECSwJUAl0CZwJx
+AnoChAKOApgCogKsArYCwQLLAtUC4ALrAvUDAAMLAxYDIQMtAzgDQwNPA1oDZgNyA34DigOWA6IDrgO6
+A8cD0wPgA+wD+QQGBBMEIAQtBDsESARVBGMEcQR+BIwEmgSoBLYExATTBOEE8AT+BQ0FHAUrBToFSQVY
+BWcFdwWGBZYFpgW1BcUF1QXlBfYGBgYWBicGNwZIBlkGagZ7BowGnQavBsAG0QbjBvUHBwcZBysHPQdP
+B2EHdAeGB5kHrAe/B9IH5Qf4CAsIHwgyCEYIWghuCIIIlgiqCL4I0gjnCPsJEAklCToJTwlkCXkJjwmk
+CboJzwnlCfsKEQonCj0KVApqCoEKmAquCsUK3ArzCwsLIgs5C1ELaQuAC5gLsAvIC+EL+QwSDCoMQwxc
+DHUMjgynDMAM2QzzDQ0NJg1ADVoNdA2ODakNww3eDfgOEw4uDkkOZA5/DpsOtg7SDu4PCQ8lD0EPXg96
+D5YPsw/PD+wQCRAmEEMQYRB+EJsQuRDXEPURExExEU8RbRGMEaoRyRHoEgcSJhJFEmQShBKjEsMS4xMD
+EyMTQxNjE4MTpBPFE+UUBhQnFEkUahSLFK0UzhTwFRIVNBVWFXgVmxW9FeAWAxYmFkkWbBaPFrIW1hb6
+Fx0XQRdlF4kXrhfSF/cYGxhAGGUYihivGNUY+hkgGUUZaxmRGbcZ3RoEGioaURp3Gp4axRrsGxQbOxtj
+G4obshvaHAIcKhxSHHscoxzMHPUdHh1HHXAdmR3DHeweFh5AHmoelB6+HukfEx8+H2kflB+/H+ogFSBB
+IGwgmCDEIPAhHCFIIXUhoSHOIfsiJyJVIoIiryLdIwojOCNmI5QjwiPwJB8kTSR8JKsk2iUJJTglaCWX
+Jccl9yYnJlcmhya3JugnGCdJJ3onqyfcKA0oPyhxKKIo1CkGKTgpaymdKdAqAio1KmgqmyrPKwIrNitp
+K50r0SwFLDksbiyiLNctDC1BLXYtqy3hLhYuTC6CLrcu7i8kL1ovkS/HL/4wNTBsMKQw2zESMUoxgjG6
+MfIyKjJjMpsy1DMNM0YzfzO4M/E0KzRlNJ402DUTNU01hzXCNf02NzZyNq426TckN2A3nDfXOBQ4UDiM
+OMg5BTlCOX85vDn5OjY6dDqyOu87LTtrO6o76DwnPGU8pDzjPSI9YT2hPeA+ID5gPqA+4D8hP2E/oj/i
+QCNAZECmQOdBKUFqQaxB7kIwQnJCtUL3QzpDfUPARANER0SKRM5FEkVVRZpF3kYiRmdGq0bwRzVHe0fA
+SAVIS0iRSNdJHUljSalJ8Eo3Sn1KxEsMS1NLmkviTCpMcky6TQJNSk2TTdxOJU5uTrdPAE9JT5NP3VAn
+UHFQu1EGUVBRm1HmUjFSfFLHUxNTX1OqU/ZUQlSPVNtVKFV1VcJWD1ZcVqlW91dEV5JX4FgvWH1Yy1ka
+WWlZuFoHWlZaplr1W0VblVvlXDVchlzWXSddeF3JXhpebF69Xw9fYV+zYAVgV2CqYPxhT2GiYfViSWKc
+YvBjQ2OXY+tkQGSUZOllPWWSZedmPWaSZuhnPWeTZ+loP2iWaOxpQ2maafFqSGqfavdrT2una/9sV2yv
+bQhtYG25bhJua27Ebx5veG/RcCtwhnDgcTpxlXHwcktypnMBc11zuHQUdHB0zHUodYV14XY+dpt2+HdW
+d7N4EXhueMx5KnmJeed6RnqlewR7Y3vCfCF8gXzhfUF9oX4BfmJ+wn8jf4R/5YBHgKiBCoFrgc2CMIKS
+gvSDV4O6hB2EgITjhUeFq4YOhnKG14c7h5+IBIhpiM6JM4mZif6KZIrKizCLlov8jGOMyo0xjZiN/45m
+js6PNo+ekAaQbpDWkT+RqJIRknqS45NNk7aUIJSKlPSVX5XJljSWn5cKl3WX4JhMmLiZJJmQmfyaaJrV
+m0Kbr5wcnImc951kndKeQJ6unx2fi5/6oGmg2KFHobaiJqKWowajdqPmpFakx6U4pammGqaLpv2nbqfg
+qFKoxKk3qamqHKqPqwKrdavprFys0K1ErbiuLa6hrxavi7AAsHWw6rFgsdayS7LCszizrrQltJy1E7WK
+tgG2ebbwt2i34LhZuNG5SrnCuju6tbsuu6e8IbybvRW9j74KvoS+/796v/XAcMDswWfB48JfwtvDWMPU
+xFHEzsVLxcjGRsbDx0HHv8g9yLzJOsm5yjjKt8s2y7bMNcy1zTXNtc42zrbPN8+40DnQutE80b7SP9LB
+00TTxtRJ1MvVTtXR1lXW2Ndc1+DYZNjo2WzZ8dp22vvbgNwF3IrdEN2W3hzeot8p36/gNuC94UThzOJT
+4tvjY+Pr5HPk/OWE5g3mlucf56noMui86Ubp0Opb6uXrcOv77IbtEe2c7ijutO9A78zwWPDl8XLx//KM
+8xnzp/Q09ML1UPXe9m32+/eK+Bn4qPk4+cf6V/rn+3f8B/yY/Sn9uv5L/tz/bf//0iIjJCVaJGNsYXNz
+bmFtZVgkY2xhc3Nlc18QEE5TQml0bWFwSW1hZ2VSZXCjJCYnWk5TSW1hZ2VSZXBYTlNPYmplY3TSIiMp
+KldOU0FycmF5oikn0iIjLC1eTlNNdXRhYmxlQXJyYXmjLCkn0y8wCTEyM1dOU1doaXRlXE5TQ29sb3JT
+cGFjZUQwIDAAEAOAC9IiIzU2V05TQ29sb3KiNSfSIiM4OVdOU0ltYWdlojgnXxAPTlNLZXllZEFyY2hp
+dmVy0Tw9VHJvb3SAAQAAAAgAAAARAAAAGgAAACMAAAAtAAAAMgAAADcAAABFAAAASwAAAFQAAABbAAAA
+aAAAAG8AAAB3AAAAeQAAAH4AAACAAAAAggAAAIcAAACSAAAAlAAAAJYAAACYAAAAnQAAAKAAAACiAAAA
+pAAAAKYAAACoAAAArQAAAMQAAADGAAAAyAAHFgQABxYJAAcWFAAHFh0ABxYwAAcWNAAHFj8ABxZIAAcW
+TQAHFlUABxZYAAcWXQAHFmwABxZwAAcWdwAHFn8ABxaMAAcWkQAHFpMABxaVAAcWmgAHFqIABxalAAcW
+qgAHFrIABxa1AAcWxwAHFsoABxbPAAAAAAAABAEAAAAAAAAAPgAAAAAAAAAAAAAAAAAHFtE
 </mutableData>
         </image>
-        <image name="help_btn.png" width="30" height="30"/>
         <image name="index_btn.png" width="30" height="30"/>
         <image name="info_btn.png" width="30" height="30"/>
         <image name="logo_iPad.png" width="380" height="70"/>

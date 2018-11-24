@@ -81,7 +81,6 @@
 	DeckViewController* controller = [[[DeckViewController alloc] initWithNibName:@"DeckViewControlleriPad" bundle:nil] autorelease];
 	
 	controller.cardDecks = deckList;
-///	[self.navigationController pushViewController:controller animated:YES];
 	[self.view removeFromSuperview];
 	[[AppDelegate_iPad delegate].window.rootViewController = controller view];
 
@@ -100,9 +99,7 @@
 	
 	if (audioFileName == nil)
 		return;
-	
-	//audioFileName = [[NSBundle mainBundle] pathForResource:audioFileName ofType:nil inDirectory:nil];
-		
+			
 	AVAudioPlayer* player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audioFileName] error:&err];
 	//player.delegate=self;
 	[player play];

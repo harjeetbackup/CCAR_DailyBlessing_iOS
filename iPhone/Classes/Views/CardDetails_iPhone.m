@@ -16,8 +16,8 @@
 #import "SearchViewController_iPhone.h"
 #import <QuartzCore/QuartzCore.h>
 #import <MediaPlayer/MediaPlayer.h>
-
 #import "CardDetails_iPhone.h"
+
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
@@ -44,15 +44,13 @@
     //[button setTitle:@"" forState:UIControlStateNormal];
     // [button setBackgroundImage:[UIImage imageNamed:@"backSeven.png"] forState:UIControlStateNormal];
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
-    [buttonPrevious setImage:[UIImage imageNamed:@"back-red_1.png"] forState:UIControlStateNormal];
+        [buttonPrevious setImage:[UIImage imageNamed:@"back-red_1.png"] forState:UIControlStateNormal];
     }
-    else
-    {
+    else {
        [buttonPrevious setImage:[UIImage imageNamed:@"left_arw.png"] forState:UIControlStateNormal];
     }
     
-    buttonPrevious.frame = CGRectMake(8.0, 5.0, 22.0, 38.0);
+    buttonPrevious.frame = CGRectMake(40.0, 5.0, 22.0, 38.0);
     buttonPrevious.contentMode=UIViewContentModeScaleAspectFit;
     buttonPrevious.hidden = NO;
     //[self.view addSubview: button];
@@ -98,15 +96,15 @@
         [buttonNext setImage:[UIImage imageNamed:@"right_arw.png"] forState:UIControlStateNormal];
  
     }
-    buttonNext.frame = CGRectMake(290.0, 5.0, 22.0, 38.0);
+    buttonNext.frame = CGRectMake(UIScreen.mainScreen.bounds.size.width - 60.0, 5.0, 22.0, 38.0);
     buttonNext.contentMode=UIViewContentModeScaleAspectFit;
     buttonNext.hidden = NO;
     //[self.view addSubview: button];
     [self.customToolBarBottom addSubview: buttonNext];
     //[_myNavBar addSubview:button];
+   
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        
-        
+
         CGRect myFrameScrollView= _scrlView.frame;
         myFrameScrollView.origin.y = 44;
         _scrlView.frame = myFrameScrollView;
@@ -116,7 +114,7 @@
        CGRect myFrameScrollViewHeight = _scrlView.frame;
         myFrameScrollViewHeight.size.height = 391;
         _scrlView.frame = myFrameScrollViewHeight;
-        
+  
     }
 	
 	[_prevButton setNeedsDisplay];
@@ -218,14 +216,6 @@
   //  _scrlView.frame = CGRectMake(0, 44, 320, 436);
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
 - (void)loadPrevCardDetails:(id)sender
 {
 	_isDragging = NO;
@@ -235,7 +225,7 @@
 		_cardType = kCardTypeFront;
         
 		[self updateFlashCard];
-		[_scrlView setContentOffset:CGPointMake(320 * _selectedCardIndex, 0) animated:YES];
+		[_scrlView setContentOffset:CGPointMake(self.view.bounds.size.width * _selectedCardIndex, 0) animated:YES];
 		[self updateFlashDetails];
 	}
 }
@@ -250,7 +240,7 @@
 		_cardType = kCardTypeFront;
         
 		[self updateFlashCard];
-		[_scrlView setContentOffset:CGPointMake(320 * _selectedCardIndex, 0) animated:YES];
+		[_scrlView setContentOffset:CGPointMake(self.view.bounds.size.width * _selectedCardIndex, 0) animated:YES];
 		[self updateFlashDetails];
 	}
 }
@@ -443,7 +433,7 @@
 	int count = (_arrayOfCards.count > 3) ? 3 : _arrayOfCards.count;
 	
 	//[_scrlView setContentSize:CGSizeMake(320 * [_arrayOfCards count], _scrlView.frame.size.height)];
-    _scrlView.contentSize = CGSizeMake(320 * [_arrayOfCards count], _scrlView.frame.size.height);
+    _scrlView.contentSize = CGSizeMake(UIScreen.mainScreen.bounds.size.width * [_arrayOfCards count], _scrlView.frame.size.height);
 	_scrlView.scrollEnabled = YES;
 	
 	NSInteger index;
@@ -464,7 +454,7 @@
 		index = tempIndex	+ i;
 		
 		//Card* card = [[_arrayOfCards objectAtIndex:index] getCardOfType: kCardTypeFront];
-		CustomWebView_iPhone* page = [[CustomWebView_iPhone alloc] initWithFrame:CGRectMake(320 * i, 0, 320, _scrlView.frame.size.height)];
+		CustomWebView_iPhone* page = [[CustomWebView_iPhone alloc] initWithFrame:CGRectMake(UIScreen.mainScreen.bounds.size.width * i, 0, UIScreen.mainScreen.bounds.size.width, _scrlView.frame.size.height)];
         page.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         Card* card = [[_arrayOfCards objectAtIndex:index] getCardOfType: kCardTypeFront];
 
@@ -499,7 +489,7 @@
 
 	if (_totalCard >= 2 && _selectedCardIndex >= 1) {
 		[self updateFlashCard];
-		[_scrlView setContentOffset:CGPointMake(320 * _selectedCardIndex, 0) animated:YES];
+		[_scrlView setContentOffset:CGPointMake(UIScreen.mainScreen.bounds.size.width * _selectedCardIndex, 0) animated:YES];
 		[self updateFlashDetails];
 		
 	}else if (_totalCard==1) {
@@ -549,7 +539,7 @@
 	
 	NSInteger tempIndex=(index % 3);
 	CustomWebView_iPhone* webView = (CustomWebView_iPhone*)[_arrayOfpages objectAtIndex:tempIndex];
-	webView.frame = CGRectMake(320 * index, 0, 320, _scrlView.frame.size.height);
+	webView.frame = CGRectMake(UIScreen.mainScreen.bounds.size.width * index, 0, UIScreen.mainScreen.bounds.size.width, _scrlView.frame.size.height);
 	webView.tag = 1100 + index;
 	
 	//if (index != _selectedCardIndex){
@@ -614,7 +604,7 @@
 	[UIView setAnimationTransition:(UIViewAnimationTransitionFlipFromLeft)
 						   forView:_scrlView cache:NO];
 	
-	int tagVal = 1100 + _scrlView.contentOffset.x / 320;
+	int tagVal = 1100 + _scrlView.contentOffset.x / UIScreen.mainScreen.bounds.size.width;
 	CustomWebView_iPhone* webView = (CustomWebView_iPhone*)[_scrlView viewWithTag:tagVal];
 	[webView loadClearBgHTMLString:[[_arrayOfCards objectAtIndex:_selectedCardIndex] getCardOfType: _cardType].cardTitle];
 
@@ -803,7 +793,7 @@ if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
 - (void) slidingAction:(NSTimer*)timer
 {
 	UIScrollView* scrollView = [timer userInfo];
-	_selectedCardIndex = scrollView.contentOffset.x / 320;
+	_selectedCardIndex = scrollView.contentOffset.x / UIScreen.mainScreen.bounds.size.width;
 	_cardType = kCardTypeFront;
 	[self updateFlashCard];	
 	[self updateFlashDetails];

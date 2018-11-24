@@ -14,7 +14,7 @@
 @interface AppDelegate_iPhone : NSObject <UIApplicationDelegate>
 {
     
-    IBOutlet UIWindow*					window;
+    IBOutlet UIWindow* window;
     IBOutlet UINavigationController*	navigationController;
 	
 	BOOL				_isBookMarked;
