@@ -35,6 +35,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad 
 {
+    self.edgesForExtendedLayout = false;
    // _scrlView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     UIButton *buttonPrevious = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonPrevious.tintColor = [UIColor blackColor];
@@ -55,7 +56,7 @@
     buttonPrevious.hidden = NO;
     //[self.view addSubview: button];
     [self.customToolBarBottom addSubview: buttonPrevious];
-    
+/*
     UIButton *buttonBookark = [UIButton buttonWithType:UIButtonTypeCustom];
    // buttonBookark.tintColor = [UIColor blackColor];
     [buttonBookark addTarget:self
@@ -79,7 +80,7 @@
     buttonBookark.hidden = NO;
     //[self.view addSubview: button];
     [self.customToolBarBottom addSubview: buttonBookark];
-    
+  */
     UIButton *buttonNext = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonNext.tintColor = [UIColor blackColor];
     [buttonNext addTarget:self
@@ -268,8 +269,7 @@
 			--_totalCard;
             if(_arrayOfCards.count==_selectedCardIndex)
                 _selectedCardIndex = ((_selectedCardIndex - 1) < 0) ? 0 : (_selectedCardIndex - 1);
-			[_scrlView setContentSize:CGSizeMake(320 * [_arrayOfCards count], _scrlView.frame.size.height)];
-            
+			[_scrlView setContentSize:CGSizeMake(self.view.bounds.size.width * [_arrayOfCards count], _scrlView.frame.size.height)];
 			[self updateFlashDetails];
 			[self updateFlashCard];
 		}
@@ -277,14 +277,12 @@
 		{
            	FlashCardDeckList* deckList = [[FlashCardDeckList alloc] init];
             DeckViewController_iPhone* controller = [[DeckViewController_iPhone alloc] initWithNibName:@"DeckViewController_iPhone" bundle:nil];
-            
             controller.cardDecks = deckList;
             [self.navigationController pushViewController:controller animated:YES];
             self.navigationItem.hidesBackButton=YES;
             [deckList release];
             [controller release];
 		}
-        
 	}
 }
 
@@ -336,10 +334,8 @@
 	[_searchButton release];
 	[_favorite release];
 	[_know release];
-		
 	[_toggleFavButton release];
 	[_toggleKnowUnKnownButton release];
-	
 	[_prevButton release];
 	[_nextButton release];
 		
@@ -626,40 +622,37 @@
 	
 }
 
-/*- (IBAction)bookMarked
+- (IBAction)bookMarked
 {
-	FlashCard* card = [_arrayOfCards objectAtIndex:_selectedCardIndex];
-	card.isBookMarked = !card.isBookMarked;
-	[self updateCardDetails];
-	[[AppDelegate_iPhone getDBAccess] setBookmarkedCard:((card.isBookMarked) ? 1 : 0) ForCardId:card.cardID];
-	
-	if ([AppDelegate_iPhone delegate].isBookMarked && !card.isBookMarked)
-	{
-		if (_arrayOfCards.count > 1)
-		{
-			[_arrayOfCards removeObjectAtIndex:_selectedCardIndex];
-			--_totalCard;
+    FlashCard* card = [_arrayOfCards objectAtIndex:_selectedCardIndex];
+    card.isBookMarked = !card.isBookMarked;
+    [self updateCardDetails];
+    [[AppDelegate_iPhone getDBAccess] setBookmarkedCard:((card.isBookMarked) ? 1 : 0) ForCardId:card.cardID];
+    
+    if ([AppDelegate_iPhone delegate].isBookMarked && !card.isBookMarked)
+    {
+        if (_arrayOfCards.count > 1)
+        {
+            [_arrayOfCards removeObjectAtIndex:_selectedCardIndex];
+            --_totalCard;
             if(_arrayOfCards.count==_selectedCardIndex)
-			_selectedCardIndex = ((_selectedCardIndex - 1) < 0) ? 0 : (_selectedCardIndex - 1);
-			[_scrlView setContentSize:CGSizeMake(320 * [_arrayOfCards count], _scrlView.frame.size.height)];
-            
-			[self updateFlashDetails];
-			[self updateFlashCard];
-		}
-		else
-		{
-           	FlashCardDeckList* deckList = [[FlashCardDeckList alloc] init];
+                _selectedCardIndex = ((_selectedCardIndex - 1) < 0) ? 0 : (_selectedCardIndex - 1);
+            [_scrlView setContentSize:CGSizeMake(self.view.bounds.size.width * [_arrayOfCards count], _scrlView.frame.size.height)];
+            [self updateFlashDetails];
+            [self updateFlashCard];
+        }
+        else
+        {
+            FlashCardDeckList* deckList = [[FlashCardDeckList alloc] init];
             DeckViewController_iPhone* controller = [[DeckViewController_iPhone alloc] initWithNibName:@"DeckViewController_iPhone" bundle:nil];
-            
             controller.cardDecks = deckList;
             [self.navigationController pushViewController:controller animated:YES];
             self.navigationItem.hidesBackButton=YES;
             [deckList release];
             [controller release];
-		}
-
-	}
-}*/
+        }
+    }
+}
 
 - (IBAction)cardKnownUnKnown
 {
@@ -691,7 +684,7 @@ if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
 		_favorite.hidden = YES;
 		favImg.hidden = YES;
 		[_toggleFavButton setImage:[UIImage imageNamed:@"bookmark_7.png"] forState:UIControlStateNormal];
-          // [_toggleFavButton setFrame:CGRectMake(140, 0, 30, 38)];
+        //[_toggleFavButton setFrame:CGRectMake(140, 0, 30, 38)];
 	}
 	
 	if(card.isKnown)
@@ -708,7 +701,7 @@ if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
 	}
 	
 	
-	if (card.cardID!=0 && [[AppDelegate_iPhone getDBAccess] isCommentOrNotesAvailable:card.cardID]) {
+	if (card.cardID !=0 && [[AppDelegate_iPhone getDBAccess] isCommentOrNotesAvailable:card.cardID]) {
 		[actionImg setImage:[UIImage imageNamed:@"window_icon.png"] forState:UIControlStateNormal];
 	}else {
 		[actionImg setImage:[UIImage imageNamed:@"window_green.png"] forState:UIControlStateNormal];
@@ -835,8 +828,6 @@ if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
 	[actionSheet release]; 
 
 }
-
-
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	
