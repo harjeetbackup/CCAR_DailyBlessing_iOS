@@ -207,13 +207,20 @@
 	_cardType = kCardTypeFront;
 	[topRightBarView release];
 	
+    
+    
 	mWindow = (TapDetectingWindow *)[[UIApplication sharedApplication].windows objectAtIndex:0];
 	mWindow.controllerThatObserves = self;
     [self loadArrayOfCards:arrCards];
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-  //  _scrlView.frame = CGRectMake(0, 44, 320, 436);
+//    if([[UIScreen mainScreen] bounds].size.height >= 812)
+//    {
+//        self.customToolBarHeight.constant = 60.0;
+//    } else {
+//        self.customToolBarHeight.constant = 44.0;
+//    }
 }
 
 - (void)loadPrevCardDetails:(id)sender
@@ -229,6 +236,7 @@
 		[self updateFlashDetails];
 	}
 }
+
 - (void)loadNextCardDetails:(id)sender
 {
 	_isDragging = NO;
@@ -344,6 +352,7 @@
 	
 	[_arrayOfCards release];
     [_customToolBarBottom release];
+    [_customToolBarHeight release];
     [super dealloc];
 }
 

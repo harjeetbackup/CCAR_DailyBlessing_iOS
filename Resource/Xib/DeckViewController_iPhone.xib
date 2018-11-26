@@ -105,10 +105,29 @@
                     <color key="textColor" red="0.89591961600000003" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rG3-A2-1NY">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Blessings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTI-lE-IKA">
+                            <rect key="frame" x="128.5" y="31" width="118.5" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="3kN-59-fcO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                            <color key="textColor" red="0.21176470589999999" green="0.37254901959999998" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="highlightedColor" red="0.21176470588235294" green="0.37254901960784315" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.82745098039215681" green="0.95294117647058818" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="YTI-lE-IKA" firstAttribute="centerX" secondItem="rG3-A2-1NY" secondAttribute="centerX" id="nzt-CS-CUN"/>
+                    </constraints>
+                </view>
             </subviews>
             <constraints>
                 <constraint firstItem="uqa-qA-bfK" firstAttribute="top" secondItem="10" secondAttribute="bottom" id="1yG-DY-jaa"/>
                 <constraint firstItem="10" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="3jg-SR-g7M"/>
+                <constraint firstItem="43" firstAttribute="top" secondItem="rG3-A2-1NY" secondAttribute="bottom" id="6Dl-2s-9E1"/>
                 <constraint firstAttribute="trailing" secondItem="43" secondAttribute="trailing" id="6xE-2x-xzd"/>
                 <constraint firstItem="uqa-qA-bfK" firstAttribute="top" secondItem="14" secondAttribute="bottom" id="A0b-2i-xif"/>
                 <constraint firstItem="uqa-qA-bfK" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="10" id="BYD-kG-kjy"/>
@@ -117,15 +136,20 @@
                 <constraint firstAttribute="bottom" secondItem="17" secondAttribute="bottom" id="OZN-na-dUd"/>
                 <constraint firstItem="43" firstAttribute="top" secondItem="6" secondAttribute="top" constant="60" id="PgI-qs-BMd"/>
                 <constraint firstAttribute="trailing" secondItem="17" secondAttribute="trailing" id="Q33-0M-v4P"/>
+                <constraint firstItem="rG3-A2-1NY" firstAttribute="top" secondItem="6" secondAttribute="top" id="WMH-gX-15y"/>
                 <constraint firstAttribute="trailing" secondItem="10" secondAttribute="trailing" id="fsq-Mh-Ts8"/>
                 <constraint firstItem="17" firstAttribute="top" secondItem="uqa-qA-bfK" secondAttribute="bottom" id="hlc-Vz-Hyn"/>
+                <constraint firstItem="43" firstAttribute="top" secondItem="YTI-lE-IKA" secondAttribute="bottom" constant="8" id="klr-7N-l2r"/>
                 <constraint firstAttribute="trailing" secondItem="uqa-qA-bfK" secondAttribute="trailing" constant="10" id="lXb-4r-Mno"/>
                 <constraint firstItem="43" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="np6-KW-rYL"/>
                 <constraint firstItem="10" firstAttribute="top" secondItem="43" secondAttribute="bottom" id="t2x-3k-jkJ"/>
+                <constraint firstAttribute="trailing" secondItem="rG3-A2-1NY" secondAttribute="trailing" id="wmB-U3-v19"/>
                 <constraint firstItem="14" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="xM2-db-8sY"/>
                 <constraint firstItem="14" firstAttribute="top" secondItem="6" secondAttribute="top" id="xrK-XS-4y0"/>
+                <constraint firstItem="rG3-A2-1NY" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="yof-tc-htv"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
     <resources>

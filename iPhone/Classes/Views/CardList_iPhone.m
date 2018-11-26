@@ -69,7 +69,7 @@
 	[lblDeckName setTextAlignment:UITextAlignmentCenter];
 	[lblDeckName setBackgroundColor:[UIColor clearColor]];
 	[lblDeckName setTextColor:[UIColor whiteColor]];
-	lblDeckName.font = [UIFont systemFontOfSize:12];
+	lblDeckName.font = [UIFont systemFontOfSize:16];
     if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
     {
         lblDeckName.textColor = [UIColor whiteColor];
@@ -77,7 +77,7 @@
     else
     {
         lblDeckName.textColor = [UIColor colorWithRed:54.0/255 green:95.0/255 blue:145.0/255 alpha:1];
-        [lblDeckName setFont:[UIFont fontWithName:@"Arial-BoldMT" size:10]];
+        [lblDeckName setFont:[UIFont fontWithName:@"Arial-BoldMT" size:16]];
     }
 	lblDeckName.text = objFlashCardDeck.deckTitle;
 	self.navigationItem.titleView = lblDeckName;

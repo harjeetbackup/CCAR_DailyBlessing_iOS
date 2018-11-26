@@ -35,8 +35,6 @@
 //static NSString *facebookAppId=@"136422206434654";
 //static NSString *facebookAppSecretKey=@"d9b94a7b6157859be29f2556d00fadde";
 
-
-
 @implementation DeckViewController_iPhone
 @synthesize cardDecks = _cardDecks;
 bool navBar=YES;
@@ -153,7 +151,8 @@ bool navBar=YES;
        // self.coprrightLabel.backgroundColor = [UIColor redColor];
         // UIImage *image = [UIImage imageNamed:@"Launching_iphone568@2x.png"];
         //[self.dailyBlessingImgView setImage:image];
-
+/*
+ ---> L commented
         if([[UIScreen mainScreen] bounds].size.height >= 812)
         {
             UIView *sevenViewNavBar = [[UIView alloc]initWithFrame:CGRectMake(0,0,UIScreen.mainScreen.bounds.size.width,60)];
@@ -183,7 +182,7 @@ bool navBar=YES;
             [sevenLabel setFont:[UIFont fontWithName:@"Arial-BoldMT" size:16]];
             [self.view addSubview:sevenLabel];
         }
-        
+    */
         if([[UIScreen mainScreen] bounds].size.height >= 812)
         {
             self.dailyBlessingsToolBarHeight.constant = 60.0;
@@ -195,7 +194,7 @@ bool navBar=YES;
 
         }
         
-        
+ /*
         //[self.navigationController.navigationBar setTintColor:[UIColor redColor]];
 /*
          --> L commented
