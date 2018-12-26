@@ -198,12 +198,6 @@
 	[self.view removeFromSuperview];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
-}
-
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[_scrlView setContentOffset:CGPointZero];
@@ -379,7 +373,9 @@
 	for (int i = 0; i < count; i++)
 	{
 		index = tempIndex	+ i;
-        CustomWebView* page = [[CustomWebView alloc] initWithFrame:self.view.bounds];
+      //  CustomWebView* page = [[CustomWebView alloc] initWithFrame:self.view.bounds];
+        CustomWebView* page = [[CustomWebView alloc] initWithFrame:CGRectMake(UIScreen.mainScreen.bounds.size.width * i, 0, UIScreen.mainScreen.bounds.size.width, _scrlView.frame.size.height)];
+         page.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         card = [[_arrayOfCards objectAtIndex:index] getCardOfType: kCardTypeFront];
         //page.frame = CGRectMake(kDetailViewWidth * i, 0, kDetailViewWidth, _scrlView.frame.size.height);
         
@@ -729,7 +725,7 @@
 - (void) slidingAction:(NSTimer*)timer
 {
 	UIScrollView* scrollView = [timer userInfo];
-	_selectedCardIndex = scrollView.contentOffset.x / kDetailViewWidth;
+	_selectedCardIndex = scrollView.contentOffset.x / self.view.frame.size.width;
 	_cardType = kCardTypeFront;
 	[self updateFlashCard];
 	[self updateFlashDetails];

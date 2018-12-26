@@ -214,15 +214,6 @@
 	mWindow.controllerThatObserves = self;
     [self loadArrayOfCards:arrCards];
 }
--(void)viewDidAppear:(BOOL)animated
-{
-//    if([[UIScreen mainScreen] bounds].size.height >= 812)
-//    {
-//        self.customToolBarHeight.constant = 60.0;
-//    } else {
-//        self.customToolBarHeight.constant = 44.0;
-//    }
-}
 
 - (void)loadPrevCardDetails:(id)sender
 {
@@ -385,6 +376,7 @@
 	AVAudioPlayer* player = [[AVAudioPlayer alloc] initWithContentsOfURL:
 							 [NSURL fileURLWithPath:audioFileName] 
 									error:&err];
+    
 	//player.delegate = self;
 	[player play];
 }
