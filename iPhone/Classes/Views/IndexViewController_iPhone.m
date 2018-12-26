@@ -68,7 +68,7 @@
 
 #pragma mark -
 #pragma mark Table view data source
-NSArray *flashCards;
+NSArray *flashCards1;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return [indices count];
@@ -80,12 +80,12 @@ NSArray *flashCards;
 	NSString *alphabet = [indices objectAtIndex:section];
 
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", alphabet];
-    flashCards = [cards filteredArrayUsingPredicate:predicate];
+    flashCards1 = [cards filteredArrayUsingPredicate:predicate];
 	
 	//DBAccess* db=[AppDelegate_iPhone getDBAccess];
 	//NSMutableArray *flashCards=[db getCardsByAlphabet:alphabet];
-	NSLog(@"Alphabet : %@, Section : %d, Rows : %d",alphabet, section,[flashCards count]);
-    return [flashCards count];
+	NSLog(@"Alphabet : %@, Section : %d, Rows : %d",alphabet, section,[flashCards1 count]);
+    return [flashCards1 count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -150,9 +150,9 @@ NSArray *flashCards;
 	//NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", alphabet];
     //NSArray *flashCards = [cards filteredArrayUsingPredicate:predicate];
 	CGSize labelSize = CGSizeMake(195.0f, 20.0);
-	if([flashCards count] > 0)
+	if([flashCards1 count] > 0)
 	{
-		NSString * strCardName = [flashCards objectAtIndex:indexPath.row];
+		NSString * strCardName = [flashCards1 objectAtIndex:indexPath.row];
 		if ([strCardName length] > 0)
 			labelSize = [strCardName sizeWithFont: [UIFont systemFontOfSize: 16.0] constrainedToSize: CGSizeMake(labelSize.width, 1000) lineBreakMode: UILineBreakModeWordWrap];
 		

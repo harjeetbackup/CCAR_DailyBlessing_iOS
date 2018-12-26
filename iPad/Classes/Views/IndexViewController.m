@@ -138,7 +138,7 @@
 NSString *alphabet;
 NSPredicate *predicate;
 NSArray *flashCards ;
-NSString * strCardName;
+NSString * strCardName1;
 CGSize labelSize;
 NSString* strHeaderTitle = @"";
 CGRect tableRect;
@@ -164,9 +164,9 @@ Card* card;
 		if([cards count] > 0)
 		{
 			card =  (Card *)[[cards objectAtIndex:indexPath.row] getCardOfType: kCardTypeFront];
-			strCardName = card.cardName;
-			if ([strCardName length] > 0)
-				labelSize = [strCardName sizeWithFont: [UIFont systemFontOfSize: 18.0] constrainedToSize: CGSizeMake(labelSize.width, 1000) lineBreakMode: UILineBreakModeWordWrap];
+			strCardName1 = card.cardName;
+			if ([strCardName1 length] > 0)
+				labelSize = [strCardName1 sizeWithFont: [UIFont systemFontOfSize: 18.0] constrainedToSize: CGSizeMake(labelSize.width, 1000) lineBreakMode: UILineBreakModeWordWrap];
         }
 	}
 	else
@@ -179,9 +179,9 @@ Card* card;
         
 		if([flashCards count] > 0)
 		{
-			strCardName = [flashCards objectAtIndex:indexPath.row];
-			if ([strCardName length] > 0)
-				labelSize = [strCardName sizeWithFont: [UIFont systemFontOfSize: 18.0] constrainedToSize: CGSizeMake(labelSize.width, 1000) lineBreakMode: UILineBreakModeWordWrap];
+			strCardName1 = [flashCards objectAtIndex:indexPath.row];
+			if ([strCardName1 length] > 0)
+				labelSize = [strCardName1 sizeWithFont: [UIFont systemFontOfSize: 18.0] constrainedToSize: CGSizeMake(labelSize.width, 1000) lineBreakMode: UILineBreakModeWordWrap];
             
 		}
 	}

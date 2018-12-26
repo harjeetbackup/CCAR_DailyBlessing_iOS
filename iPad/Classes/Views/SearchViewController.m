@@ -112,7 +112,7 @@
 #pragma mark -
 #pragma mark Table view data source
 
-FlashCard* card;
+FlashCard* card1;
 NSString * strCardName;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -172,8 +172,8 @@ NSString * strCardName;
 	CGSize labelSize = CGSizeMake(450.0f, 20.0);
 	if ([cards count]!=0) {
 		
-		card=(FlashCard*)[cards objectAtIndex:indexPath.row];
-		strCardName = [card cardName];
+		card1=(FlashCard*)[cards objectAtIndex:indexPath.row];
+		strCardName = [card1 cardName];
 		if ([strCardName length] > 0)
 			labelSize = [strCardName sizeWithFont: [UIFont systemFontOfSize: 16.0] constrainedToSize: CGSizeMake(labelSize.width, 1000) lineBreakMode: UILineBreakModeWordWrap];
 	}
