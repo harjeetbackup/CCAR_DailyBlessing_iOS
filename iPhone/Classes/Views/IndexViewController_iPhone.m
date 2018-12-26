@@ -58,7 +58,6 @@
         } 
 	}
 	
-	
 }
 
 
@@ -78,7 +77,6 @@ NSArray *flashCards1;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
 	NSString *alphabet = [indices objectAtIndex:section];
-
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", alphabet];
     flashCards1 = [cards filteredArrayUsingPredicate:predicate];
 	
@@ -120,14 +118,13 @@ NSArray *flashCards1;
 		[cell setAccessoryView:imageView];
 		
 	}
-	
-	
+
 	NSString *alphabet = [indices objectAtIndex:[indexPath section]];
 	
 	
     //---get all states beginning with the letter---
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", alphabet];
-    NSArray *flashCards = [cards filteredArrayUsingPredicate:predicate];
+    flashCards = [cards filteredArrayUsingPredicate:predicate];
     NSLog(@"For alphabet %@, no. of cards : %d",alphabet,[flashCards count]);
 	if ([flashCards count]>0) {
 		//---extract the relevant state from the states object---
@@ -144,8 +141,6 @@ NSArray *flashCards1;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 	//NSString *alphabet = [indices objectAtIndex:[indexPath section]];
-	
-	
     //---get all states beginning with the letter---
 	//NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", alphabet];
     //NSArray *flashCards = [cards filteredArrayUsingPredicate:predicate];
@@ -154,8 +149,7 @@ NSArray *flashCards1;
 	{
 		NSString * strCardName = [flashCards1 objectAtIndex:indexPath.row];
 		if ([strCardName length] > 0)
-			labelSize = [strCardName sizeWithFont: [UIFont systemFontOfSize: 16.0] constrainedToSize: CGSizeMake(labelSize.width, 1000) lineBreakMode: UILineBreakModeWordWrap];
-		
+			labelSize = [strCardName sizeWithFont: [UIFont systemFontOfSize: 16.0] constrainedToSize: CGSizeMake(labelSize.width, 1000) lineBreakMode: UILineBreakModeWordWrap];		
 	}
 	return 24.0 + labelSize.height;
 }
@@ -174,7 +168,6 @@ NSArray *flashCards1;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	DBAccess* db=[AppDelegate_iPhone getDBAccess];
-	
 	NSMutableArray* deckArray=[db getFlashCardForQuery:SELECT_Alphabetical_DECK_CARD_QUERY];
 	CardDetails_iPhone* detail = [[CardDetails_iPhone alloc] initWithNibName:@"CardDetails_iPhone" bundle:nil];
 	 detail.arrCards=deckArray;
@@ -186,10 +179,9 @@ NSArray *flashCards1;
 		 NSLog(@"No. of rows in section %d is %d",i,[_tableView numberOfRowsInSection:i]);
 		row += [_tableView numberOfRowsInSection:i];
 	 }
-	 row += indexPath.row;
+    row += indexPath.row;
 	detail._selectedCardIndex=row;
 	[self.navigationController pushViewController:detail animated:YES];
-	
 	//[detail loadArrayOfCards:deckArray];
 	[detail release];
 	
@@ -202,7 +194,6 @@ NSArray *flashCards1;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 - (void)dealloc {
 	[super dealloc];

@@ -14,13 +14,13 @@
 {
 	IBOutlet UIWebView*			_webView;
 	IBOutlet UITableView*		_tableView;
-	IBOutlet UINavigationItem*	_navItem;
+//	IBOutlet UINavigationItem*	_navItem;
 	ContentType					_contentType;
 	DeckViewController_iPhone*	_parentCtrl;
 	NSMutableArray*				_settingButtons;
 	Boolean						_isRandomOption;
 }
-@property (retain, nonatomic) IBOutlet UINavigationBar *myNavBar;
+//@property (retain, nonatomic) IBOutlet UINavigationBar *myNavBar;
 @property (retain, nonatomic) IBOutlet UIButton *backButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *myBackButton;
 @property (retain, nonatomic) IBOutlet UIImageView *imageView;

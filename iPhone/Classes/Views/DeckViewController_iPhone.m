@@ -19,11 +19,10 @@
 #import "IndexViewController_iPhone.h"
 #import "MyCommentsViewController_iPhone.h"
 #import "MyVoiceNotesViewController_iPhone.h"
-
 #import "Utils.h"
-
 #import <Social/Social.h>
 #import <QuartzCore/QuartzCore.h>
+
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
@@ -36,14 +35,12 @@
 //static NSString *facebookAppId=@"136422206434654";
 //static NSString *facebookAppSecretKey=@"d9b94a7b6157859be29f2556d00fadde";
 
-
-
 @implementation DeckViewController_iPhone
 @synthesize cardDecks = _cardDecks;
 bool navBar=YES;
+
 - (void)didReceiveMemoryWarning
 {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
@@ -75,13 +72,20 @@ bool navBar=YES;
         self.settingButton.tintColor = [UIColor whiteColor];
         self.helpButton.tintColor = [UIColor whiteColor];
         self.infoButton.tintColor = [UIColor whiteColor];
-        if([[UIScreen mainScreen] bounds].size.height == 568)
+     
+   /*
+    --> L commented
+
+    if([[UIScreen mainScreen] bounds].size.height == 568)
         {
             self.view.backgroundColor = [UIColor clearColor];
             CGRect copyRight = self.coprrightLabel.frame;
             copyRight.origin.y = 460;
             self.coprrightLabel.frame = copyRight;
         }
+    ================
+    
+    */
        // [[UIScreen mainScreen] bounds].size.height == 568
         
       /*  CGRect myFrameTableHeight = self.blessingTable.frame;
@@ -92,10 +96,8 @@ bool navBar=YES;
         myFrameTableHeight.size.height = 250;
         self.coprrightLabel.frame = myLabel;
         
-        
         self.coprrightLabel.textColor = [UIColor  redColor];
         [self.coprrightLabel setFont:[UIFont fontWithName:@"Arial-BoldMT" size:8.5]];*/
-
         
         // self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:211.0/255 green:243.0/255 blue:255.0/255 alpha:1];
     }
@@ -149,33 +151,67 @@ bool navBar=YES;
        // self.coprrightLabel.backgroundColor = [UIColor redColor];
         // UIImage *image = [UIImage imageNamed:@"Launching_iphone568@2x.png"];
         //[self.dailyBlessingImgView setImage:image];
+/*
+ ---> L commented
+        if([[UIScreen mainScreen] bounds].size.height >= 812)
+        {
+            UIView *sevenViewNavBar = [[UIView alloc]initWithFrame:CGRectMake(0,0,UIScreen.mainScreen.bounds.size.width,60)];
+            sevenViewNavBar.backgroundColor = [UIColor colorWithRed:211.0/255 green:243.0/255 blue:255.0/255 alpha:1];
+            //sevenViewNavBar.backgroundColor= [UIColor yellowColor];
+            [self.view addSubview:sevenViewNavBar];
+        }else {
+            UIView *sevenViewNavBar = [[UIView alloc]initWithFrame:CGRectMake(0,0,UIScreen.mainScreen.bounds.size.width,44)];
+            sevenViewNavBar.backgroundColor = [UIColor colorWithRed:211.0/255 green:243.0/255 blue:255.0/255 alpha:1];
+            //sevenViewNavBar.backgroundColor= [UIColor yellowColor];
+            [self.view addSubview:sevenViewNavBar];
+        }
+ 
+        if([[UIScreen mainScreen] bounds].size.height >= 812)
+        {
+            UILabel *sevenLabel = [[UILabel alloc] initWithFrame:CGRectMake(150,15,UIScreen.mainScreen.bounds.size.width,50)];
+            // [sevenLabel setCenter:sevenViewNavBar.center];
+            sevenLabel.text = @"Daily Blessings";
+            sevenLabel.textColor = [UIColor  colorWithRed:54.0/255 green:95.0/255 blue:145.0/255 alpha:1];
+            [sevenLabel setFont:[UIFont fontWithName:@"Arial-BoldMT" size:16]];
+            [self.view addSubview:sevenLabel];
+        }else {
+            UILabel *sevenLabel = [[UILabel alloc] initWithFrame:CGRectMake(150,0,UIScreen.mainScreen.bounds.size.width,44)];
+            // [sevenLabel setCenter:sevenViewNavBar.center];
+            sevenLabel.text = @"Daily Blessings";
+            sevenLabel.textColor = [UIColor  colorWithRed:54.0/255 green:95.0/255 blue:145.0/255 alpha:1];
+            [sevenLabel setFont:[UIFont fontWithName:@"Arial-BoldMT" size:16]];
+            [self.view addSubview:sevenLabel];
+        }
+    */
+        if([[UIScreen mainScreen] bounds].size.height >= 812)
+        {
+            self.dailyBlessingsToolBarHeight.constant = 60.0;
+            self.topSpaceForTitleView.constant = 60.0;
+
+        } else {
+            self.dailyBlessingsToolBarHeight.constant = 44.0;
+            self.topSpaceForTitleView.constant = 44.0;
+
+        }
         
-        UIView *sevenViewNavBar = [[UIView alloc]initWithFrame:CGRectMake(0,0,320,44)];
-        sevenViewNavBar.backgroundColor = [UIColor colorWithRed:211.0/255 green:243.0/255 blue:255.0/255 alpha:1];
-        //sevenViewNavBar.backgroundColor= [UIColor yellowColor];
-        [self.view addSubview:sevenViewNavBar];
-        
-        UILabel *sevenLabel = [[UILabel alloc] initWithFrame:CGRectMake(100,0, 300, 50)];
-        sevenLabel.text = @"Daily Blessings";
-        sevenLabel.textColor = [UIColor  colorWithRed:54.0/255 green:95.0/255 blue:145.0/255 alpha:1];
-        [sevenLabel setFont:[UIFont fontWithName:@"Arial-BoldMT" size:16]];
-        [self.view addSubview:sevenLabel];
-        
+ /*
         //[self.navigationController.navigationBar setTintColor:[UIColor redColor]];
+/*
+         --> L commented
         CGRect myFrameImg = self.dailyBlessingImg.frame;
         // myFrame.origin.x = 634;
-        myFrameImg.origin.y = 40;
+        myFrameImg.origin.y = 50;
         self.dailyBlessingImg.frame = myFrameImg;
         
         CGRect myFrameTable = self.blessingTable.frame;
-        myFrameTable.origin.y = 118;
+        myFrameTable.origin.y = 140;
         self.blessingTable.frame = myFrameTable;
         //self.dailyBlessingsTable.backgroundColor = [UIColor whiteColor];
         
         CGRect myFrameTableHeight = self.blessingTable.frame;
         myFrameTableHeight.size.height = 300;
         self.blessingTable.frame = myFrameTableHeight;
-        
+ */
         //self.dailyBlessingToolBar.tintColor = [UIColor redColor];
         //self.dailyBlessingImg.hidden=YES;
     }
@@ -186,10 +222,14 @@ bool navBar=YES;
 	imageview.frame = CGRectMake(0.0,0.0,320.0,44.0);
 	self.navigationItem.titleView = imageview;
 	*/
-	self.navigationController.navigationBarHidden = NO;
+	
+    self.navigationController.navigationBarHidden = NO;
 	self.navigationController.delegate = self;
 	//self.title = @"Antibiotic Manual";
 	//self.title = [Utils getValueForVar:kHeaderTitle];
+    
+ /*
+  --> L commented
 	UILabel* tlabel=[[UILabel alloc] initWithFrame:CGRectMake(0,0, 300, 40)];
 	tlabel.text=[Utils getValueForVar:kHeaderTitle];
     tlabel.textColor=[UIColor whiteColor];
@@ -198,7 +238,7 @@ bool navBar=YES;
 	tlabel.font = [UIFont boldSystemFontOfSize:18];
 	[tlabel setTextAlignment:UITextAlignmentCenter];
     self.navigationItem.titleView=tlabel;
-	
+*/
 }
 - (BOOL)prefersStatusBarHidden
 {
@@ -251,6 +291,8 @@ bool navBar=YES;
     [_blessingTable release];
     [_dailyBlessingImg release];
     [_myLabelSeven release];
+    [_dailyBlessingsToolBarHeight release];
+    [_topSpaceForTitleView release];
     [super dealloc];
 }
 /*-(void)viewWillAppear:(BOOL)animated{
@@ -427,7 +469,7 @@ bool navBar=YES;
                 navBar = NO;
                 deckArray = nil;
                 [model setParentCtrl:self];
-                [self presentModalViewController:model animated:YES];
+                [self.navigationController pushViewController:model animated:YES];
                 [model release];
                 return;
                 break;
@@ -537,7 +579,8 @@ bool navBar=YES;
     navBar=NO;
 	ModalViewCtrl_iPhone* model = [[ModalViewCtrl_iPhone alloc] initWithNibName:@"ModalView_iPhone" bundle:nil contentType:kContentTypeSetting];
 	[model setParentCtrl:self];
-	[self presentModalViewController:model animated:YES];
+    [self.navigationController pushViewController:model animated:YES];
+	//[self presentModalViewController:model animated:YES];
 	[model release];
 }
 
@@ -546,7 +589,8 @@ bool navBar=YES;
     navBar=NO;
 	ModalViewCtrl_iPhone* model = [[ModalViewCtrl_iPhone alloc] initWithNibName:@"ModalView_iPhone" bundle:nil contentType:kContentTypeHelp];
 	[model setParentCtrl:self];
-	[self presentModalViewController:model animated:YES];
+	[self.navigationController pushViewController:model animated:YES];
+    //[self presentModalViewController:model animated:YES];
 	[model release];
 }
 
@@ -555,7 +599,8 @@ bool navBar=YES;
     navBar=NO;
 	ModalViewCtrl_iPhone* model = [[ModalViewCtrl_iPhone alloc] initWithNibName:@"ModalView_iPhone" bundle:nil contentType:kContentTypeInfo];
 	[model setParentCtrl:self];
-	[self presentModalViewController:model animated:YES];
+	[self.navigationController pushViewController:model animated:YES];
+    //[self presentModalViewController:model animated:YES];
 	[model release];
 }
 
@@ -665,10 +710,8 @@ bool navBar=YES;
         
         [self presentViewController:facebookSheet animated:YES completion:nil];
     }
-
 	
 }
-
 
 
 -(void) publishToTwitter{

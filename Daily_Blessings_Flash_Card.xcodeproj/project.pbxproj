@@ -1856,7 +1856,7 @@
 				LastUpgradeCheck = 1000;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = 2P58UQVSRB;
+						DevelopmentTeam = MTLWNYBR52;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2417,7 +2417,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_LOCATION = NO;
-				DEVELOPMENT_TEAM = 2P58UQVSRB;
+				DEVELOPMENT_TEAM = MTLWNYBR52;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2457,7 +2457,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
-				DEVELOPMENT_TEAM = 2P58UQVSRB;
+				DEVELOPMENT_TEAM = MTLWNYBR52;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Daily_Blessings_Flash_Card_Prefix.pch;
 				HEADER_SEARCH_PATHS = (

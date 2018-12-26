@@ -60,7 +60,10 @@ UIScrollViewDelegate, TapDetectingWindowDelegate>
 @property (nonatomic,retain) NSString* _searchText;
 @property (nonatomic,retain)	TapDetectingWindow*	 mWindow;
 @property (nonatomic,retain) NSArray* arrCards;
-@property (retain, nonatomic) IBOutlet CustomToolBar *customToolBarBottom;
+@property (retain, nonatomic) IBOutlet UIView *customToolBarBottom;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *customToolBarHeight;
+
+
 - (void)loadArrayOfCards:(NSArray*)cards;
 - (IBAction)loadNextCardDetails;
 - (IBAction)loadPrevCardDetails;
@@ -70,6 +73,7 @@ UIScrollViewDelegate, TapDetectingWindowDelegate>
 - (IBAction)cardKnownUnKnown;
 - (IBAction)showCardBack;
 - (void) showActionSheet;
+
 
 - (void) updateFlashCard;
 - (void) updateCardDetails;

@@ -66,6 +66,11 @@
 }
 -(void)viewDidLoad
 {
+    
+    /*
+   --> L commented
+   
+
     if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
     {
        UIImage *image = [UIImage imageNamed:@"background.png"];
@@ -77,7 +82,10 @@
    /* CGRect myFrameNav = self.myNavBar.frame;
     myFrameNav.origin.y = 20;
     self.myNavBar.frame = myFrameNav;*/
-         
+    /*
+     --> L commented
+     
+
          CGRect myFrameWebView = _webView.frame;
          myFrameWebView.origin.y = 44;
          _webView.frame = myFrameWebView;
@@ -89,6 +97,8 @@
      forControlEvents:UIControlEventTouchUpInside];
     //[button setTitle:@"" forState:UIControlStateNormal];
     // [button setBackgroundImage:[UIImage imageNamed:@"backSeven.png"] forState:UIControlStateNormal];
+ 
+
     if ( SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
     {
     [button setImage:[UIImage imageNamed:@"backNew_1.png"] forState:UIControlStateNormal];
@@ -105,19 +115,22 @@
    // button.contentMode=UIViewContentModeScaleAspectFit;
     button.hidden = NO;
     [_myNavBar addSubview:button];
-    
+     --> L commented
+     
+
+*/
     
 }
 -(void)aMethod:(id)sender
 
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self.navigationController popViewControllerAnimated:YES];
     [_parentCtrl updateInfo];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 	//_tableView.backgroundView=[[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yellow_bg.png"]] autorelease];
 	_tableView.backgroundColor=[UIColor clearColor];
     NSString *fileName;
@@ -126,7 +139,7 @@
 	{
             
 		case kContentTypeSetting:
-			_navItem.title = @"Settings";
+			self.title =  @"Settings";
             //[self.myBackButton setImage:[UIImage imageNamed:@"back_btn_iPhone.png"]];
             
 			_tableView.hidden = NO;
@@ -138,7 +151,7 @@
 			break;
             
         case kcontentTypeIntro:
-            _navItem.title = @"Introduction";
+            self.title = @"Introduction";
             fileName = [[NSBundle mainBundle] pathForResource:@"intro.html" ofType:nil inDirectory:nil];
             request = [[NSURLRequest alloc] initWithURL:[NSURL fileURLWithPath:fileName]];
             
@@ -150,7 +163,7 @@
 			break;
             
 		case kContentTypeHelp:
-			_navItem.title = @"Help";
+			self.title = @"Help";
             fileName = [[NSBundle mainBundle] pathForResource:@"help.html" ofType:nil inDirectory:nil];
             request = [[NSURLRequest alloc] initWithURL:[NSURL fileURLWithPath:fileName]];
             
@@ -162,7 +175,7 @@
 			break;
 			
 		case kContentTypeInfo:
-			_navItem.title = @"Info";
+			self.title = @"Info";
             fileName = [[NSBundle mainBundle] pathForResource:@"info.html" ofType:nil inDirectory:nil];
             request = [[NSURLRequest alloc] initWithURL:[NSURL fileURLWithPath:fileName]];
             
