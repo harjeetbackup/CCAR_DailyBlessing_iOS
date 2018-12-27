@@ -125,10 +125,10 @@ NSArray *flashCards1;
     //---get all states beginning with the letter---
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", alphabet];
     flashCards1 = [cards filteredArrayUsingPredicate:predicate];
-    NSLog(@"For alphabet %@, no. of cards : %d",alphabet,[FlashCard count]);
-    if ([FlashCard count]>0) {
+ //   NSLog(@"For alphabet %@, no. of cards : %@",alphabet,[flashCards1 count]);
+    if ([flashCards1 count]>0) {
 		//---extract the relevant state from the states object---
-        NSString *cellValue = [FlashCard objectAtIndex:indexPath.row];
+        NSString *cellValue = [flashCards1 objectAtIndex:indexPath.row];
         cell.textLabel.text = cellValue;
 		cell.textLabel.numberOfLines = 0;
 		cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
