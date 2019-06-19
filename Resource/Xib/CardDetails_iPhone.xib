@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -55,7 +56,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="gu5-h1-ijU" secondAttribute="bottom" id="6EN-MJ-JVu"/>
+                <constraint firstItem="Y7f-2d-WBa" firstAttribute="bottom" secondItem="gu5-h1-ijU" secondAttribute="bottom" id="6EN-MJ-JVu"/>
                 <constraint firstItem="91" firstAttribute="top" secondItem="1" secondAttribute="top" id="Aqy-1d-OTR"/>
                 <constraint firstAttribute="trailing" secondItem="gu5-h1-ijU" secondAttribute="trailing" id="LMw-8B-wav"/>
                 <constraint firstItem="gu5-h1-ijU" firstAttribute="top" secondItem="91" secondAttribute="bottom" id="VnL-NB-xEj"/>
@@ -64,6 +65,7 @@
                 <constraint firstItem="91" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="uWj-JS-3TL"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Y7f-2d-WBa"/>
         </view>
     </objects>
     <resources>
