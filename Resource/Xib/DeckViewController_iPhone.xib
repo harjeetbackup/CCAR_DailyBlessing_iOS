@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -133,7 +134,7 @@
                 <constraint firstItem="uqa-qA-bfK" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="10" id="BYD-kG-kjy"/>
                 <constraint firstItem="17" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="Bwd-yg-BPY"/>
                 <constraint firstAttribute="trailing" secondItem="14" secondAttribute="trailing" id="GDX-BL-vLZ"/>
-                <constraint firstAttribute="bottom" secondItem="17" secondAttribute="bottom" id="OZN-na-dUd"/>
+                <constraint firstItem="3LV-cg-8nh" firstAttribute="bottom" secondItem="17" secondAttribute="bottom" id="OZN-na-dUd"/>
                 <constraint firstItem="43" firstAttribute="top" secondItem="6" secondAttribute="top" constant="60" id="PgI-qs-BMd"/>
                 <constraint firstAttribute="trailing" secondItem="17" secondAttribute="trailing" id="Q33-0M-v4P"/>
                 <constraint firstItem="rG3-A2-1NY" firstAttribute="top" secondItem="6" secondAttribute="top" id="WMH-gX-15y"/>
@@ -149,14 +150,15 @@
                 <constraint firstItem="rG3-A2-1NY" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="yof-tc-htv"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="33.5" y="53.5"/>
+            <viewLayoutGuide key="safeArea" id="3LV-cg-8nh"/>
+            <point key="canvasLocation" x="48.550724637681164" y="35.825892857142854"/>
         </view>
     </objects>
     <resources>
         <image name="help_btn.png" width="30" height="30"/>
         <image name="index_btn.png" width="30" height="30"/>
         <image name="info_btn.png" width="30" height="30"/>
-        <image name="logo.png" width="299" height="70"/>
+        <image name="logo.png" width="132.29447937011719" height="30.920246124267578"/>
         <image name="settings_btn.png" width="30" height="30"/>
         <image name="zoom_btn.png" width="30" height="30"/>
     </resources>
