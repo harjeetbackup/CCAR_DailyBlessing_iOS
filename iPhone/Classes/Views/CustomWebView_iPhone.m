@@ -40,9 +40,9 @@
 - (void)loadClearBgHTMLString:(NSString *)str 
 {
 	self.opaque = NO;
-	self.scalesPageToFit = YES;
-	self.dataDetectorTypes = UIDataDetectorTypeNone;
-	self.allowsInlineMediaPlayback = YES;
+	//self.scalesPageToFit = YES;
+    self.configuration.allowsInlineMediaPlayback = YES;
+    self.configuration.dataDetectorTypes = UIDataDetectorTypeNone;
 	self.backgroundColor = [UIColor clearColor];
 	NSRange range = [str rangeOfString:@"<html"];
 	
@@ -66,7 +66,7 @@
 			//NSLog(@"%@, %@", str, fName);
 			
 			[self loadRequest:req];
-			self.delegate = self;
+            self.navigationDelegate = self;
 		}
 		else {
 			[self loadHTMLString:[NSString stringWithFormat:@"<html><body bgcolor = transparent><font face=\"Arial\"><font size=\"40\">%@</font></html>",str] baseURL:nil];
@@ -74,14 +74,13 @@
 	}
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
+- (void) webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
-	[act stopAnimating];
-	
-	if (searchText!=nil && [searchText length] > 0) {
-		[self highlightAllOccurencesOfString:searchText];
-	}
-	
+    [act stopAnimating];
+
+    if (searchText!=nil && [searchText length] > 0) {
+        [self highlightAllOccurencesOfString:searchText];
+    }
 }
 
 - (NSInteger)highlightAllOccurencesOfString:(NSString*)str
@@ -102,11 +101,9 @@
     [self stringByEvaluatingJavaScriptFromString:@"FC_RemoveAllHighlights()"];
 }
 
-
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
-	[act stopAnimating];
+    [act stopAnimating];
 }
 
 @end
